@@ -1,0 +1,2 @@
+two-sum O(N) O(1)
+palindrome-number O(N) O(1)

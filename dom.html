@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surya Prakash Solution</title>
+    <style>
+      body{
+        font-family: Arial, sans-serif;
+        background-color: #222831; 
+        color: #EEEEEE;
+      }
+      hr{
+      margin: 40px 0;
+      background-color: #EEEEEE;
+      }
+      #link-tag {
+        color: #76ABAE;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      #code {
+        background-color: #454545;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        overflow-x: auto;
+      }
+      #outer-div{
+        margin: 20px;
+      }
+    </style>
+</head>
+<body>
+
+  <div id="outer-div">
+    <a href="http://leetcode.com/problems/two-sum" target="_blank" id="link-tag">two-sum</a>
+    <h3><b>Time Complexity :</b>O(N)</h3>
+    <h3><b>Space Complexity:</b>O(1)</h3>
+    <div id="code">
+    <code class="language-go" style="color: rgb(212, 212, 212); font-size: 13px; text-shadow: none; font-family: Menlo, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, &quot;Courier New&quot;, monospace; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none;"><span><span class="token" style="color: rgb(86, 156, 214);">func</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">twoSum</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>nums </span><span class="token" style="color: rgb(212, 212, 212);">[</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(206, 145, 120);">int</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> target </span><span class="token" style="color: rgb(206, 145, 120);">int</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">[</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(206, 145, 120);">int</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>    visited</span><span class="token" style="color: rgb(212, 212, 212);">:=</span><span class="token" style="color: rgb(220, 220, 170);">make</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(86, 156, 214);">map</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span class="token" style="color: rgb(206, 145, 120);">int</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(206, 145, 120);">int</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span>
+</span></span><span><span>    ret</span><span class="token" style="color: rgb(212, 212, 212);">:=</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">make</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(206, 145, 120);">int</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span class="token" style="color: rgb(181, 206, 168);">2</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(86, 156, 214);">var</span><span> t </span><span class="token" style="color: rgb(206, 145, 120);">int</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(86, 156, 214);">for</span><span> i</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span>x </span><span class="token" style="color: rgb(212, 212, 212);">:=</span><span class="token" style="color: rgb(86, 156, 214);">range</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>nums</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>        t</span><span class="token" style="color: rgb(212, 212, 212);">=</span><span>target</span><span class="token" style="color: rgb(212, 212, 212);">-</span><span>x
+</span></span><span><span>        val</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span>ok</span><span class="token" style="color: rgb(212, 212, 212);">:=</span><span>visited</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>t</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">if</span><span> ok</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>            ret</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">=</span><span>i
+</span></span><span><span>            ret</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span class="token" style="color: rgb(181, 206, 168);">1</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">=</span><span>val
+</span></span><span><span>            </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> ret
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>        visited</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>x</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">=</span><span>i
+</span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> ret</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span></span></code>
+    </div>
+    <hr>
+  </div>
+
+  <div id="outer-div">
+    <a href="http://leetcode.com/problems/palindrome-number" target="_blank" id="link-tag">palindrome-number</a>
+    <h3><b>Time Complexity :</b>O(N)</h3>
+    <h3><b>Space Complexity:</b>O(1)</h3>
+    <div id="code">
+    <code class="language-go" style="color: rgb(212, 212, 212); font-size: 13px; text-shadow: none; font-family: Menlo, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, &quot;Courier New&quot;, monospace; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none;"><span><span class="token" style="color: rgb(86, 156, 214);">func</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">isPalindrome</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>x </span><span class="token" style="color: rgb(206, 145, 120);">int</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(206, 145, 120);">bool</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(86, 156, 214);">if</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>x</span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> </span><span class="token" style="color: rgb(86, 156, 214);">false</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>    t</span><span class="token" style="color: rgb(212, 212, 212);">:=</span><span>strconv</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span class="token" style="color: rgb(220, 220, 170);">Itoa</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>x</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(86, 156, 214);">for</span><span> i </span><span class="token" style="color: rgb(212, 212, 212);">:=</span><span class="token" style="color: rgb(86, 156, 214);">range</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(220, 220, 170);">len</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>t</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">if</span><span> t</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>i</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">!=</span><span>t</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span class="token" style="color: rgb(220, 220, 170);">len</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>t</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">-</span><span>i</span><span class="token" style="color: rgb(212, 212, 212);">-</span><span class="token" style="color: rgb(181, 206, 168);">1</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> </span><span class="token" style="color: rgb(86, 156, 214);">false</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> </span><span class="token" style="color: rgb(86, 156, 214);">true</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span></span></code>
+    </div>
+    <hr>
+  </div>
+
+<body> 
+</html>
